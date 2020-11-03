@@ -63,7 +63,14 @@ If the YOLO thread is shutting down before it finishes loading, you need to incr
 if time.time() - BaseCamera.last_access[unique_name] > 60:
 ```
 All threads will shutdown after this time limit if the app thinks there's no more viewing web clients. If the YOLO streams are not used, then the default time limit for camera stream threads to shutdown is 5 seconds.
-
+```
+python kafka_producer0.py
+python kafka_producer1.py
+python app.py
+```
+in kafka_producer0 have different mode: publish_camera, publish_video, publish_webcam
+in publish_camera mode just update path = "rtsp://192.168.0.8:8080/h264_ulaw.sdp"
+for get frame from rtsp camera
 ***
 ## Running remotely
 The process is similar to running locally. If you have your own remote server, configure each camera client so that they'll be sending frames to this server address with the correct port instead of localhost (e.g. tcp://server-address-here:5555). 
