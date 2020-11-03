@@ -1,0 +1,8 @@
+tensorflow==2.3.0
+flask==1.1.2
+imutils==0.5.3
+kafka-python==2.0.2
+imagezmq==1.1.1
+keras==2.4.3
+Pillow==7.2.0
+opencv-python==4.2.0.34
