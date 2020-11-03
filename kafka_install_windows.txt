@@ -1,0 +1,60 @@
+1 .install java
++
+download https://www.oracle.com/java/technologies/javase-jre8-downloads.html
+and Change java directory to C:\Java\jre1.8.0_261
++
+Update User variable
+windows, run, sysdm.cpl, advanced, environment variable
+JAVA_HOME --> C:\Java\jre1.8.0_261
+
+system variable
+new
+Path --> %JAVA_HOME%\bin\
+
++
+Confirm java install
+cmd
+java -version
+
+2. ZooKeeper Install
+download 7z file
+https://zookeeper.apache.org/releases.html
+or
+download straight on
+https://mirror.downloadvn.com/apache/zookeeper/zookeeper-3.6.1/apache-zookeeper-3.6.1-bin.tar.gz
+extract file to C:\zookeeper-3.6.1
+cd C:\zookeeper-3.6.1\conf
+rename zoo_sample.cfg to zoo.cfg
+find and edit
+dataDir=/tmp/zookeeper to dataDir=C:\zookeeper-3.6.1
+
++
+Add System Environment Varialbes
+ZOOKEEPER_HOME = C:\zookeeper-3.6.1
+Path %ZOOKEEPER_HOME%\bin\
++
+Test
+cmd zkserver
+exit
+
+3. Kafka Install
+download kafka binary
+https://mirror.downloadvn.com/apache/kafka/2.6.0/kafka_2.12-2.6.0.tgz
+extract file to D:\kafka_2.12-2.6.0
+
+Open D:\kafka_2.12-2.6.0\config\zookeeper.properties
+change dataDir=... to dataDir=D:\\kafka_2.12-2.6.0/zookeeper-data
+Open D:\kafka_2.12-2.6.0\config\server.properties
+change log.dirs=... to  log.dirs=D:\\kafka_2.12-2.6.0/kafka-logs
+
+### You can copy 2 file in kafka config in folder config_kafka to D:\kafka_2.12-2.6.0
+
+Reference:
+https://dzone.com/articles/running-apache-kafka-on-windows-os
+
+
+RUN
+HAVE TO RUN 2 line below before streaming in python in 2 different windows
+cd D:\kafka_2.12-2.6.0
+start .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+.\bin\windows\kafka-server-start.bat .\config\server.properties
