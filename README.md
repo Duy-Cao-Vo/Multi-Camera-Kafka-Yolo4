@@ -68,7 +68,7 @@ python kafka_producer0.py
 python kafka_producer1.py
 python app.py
 ```
-in kafka_producer0 have different mode: publish_camera, publish_video, publish_webcam
+in kafka_producer0.py have different mode: publish_camera, publish_video, publish_webcam
 in publish_camera mode just update path = "rtsp://192.168.0.8:8080/h264_ulaw.sdp"
 for get frame from rtsp camera
 ***
