@@ -94,5 +94,5 @@ There's a lot of other factors that can impact performance like network speed an
 Lowering the resolution or quality of the stream will improve performance but also lower the detection accuracy. 
 
 ## Link Model
-https://drive.google.com/drive/u/2/folders/1QUPKBFcJxNQOzbp1LNFrW8QVUNW1NO4K
+https://drive.google.com/file/d/1JvQ3jN_KbCAWpd5bbHRXyQY5dt1ve0GS/view?usp=sharing
 
